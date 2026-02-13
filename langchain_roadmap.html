@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangChain Learning Path - Animated Roadmap</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .roadmap {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            animation: slideInLeft 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .milestone:nth-child(1) { animation-delay: 0.2s; }
+        .milestone:nth-child(2) { animation-delay: 0.4s; }
+        .milestone:nth-child(3) { animation-delay: 0.6s; }
+        .milestone:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            flex-shrink: 0;
+            animation: rotate 3s linear infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes rotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+        }
+
+        .milestone:nth-child(1) .icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .milestone:nth-child(2) .icon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            animation-delay: 0.5s;
+        }
+
+        .milestone:nth-child(3) .icon {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            animation-delay: 1s;
+        }
+
+        .milestone:nth-child(4) .icon {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            animation-delay: 1.5s;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 30px;
+        }
+
+        .content h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .videos {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #667eea;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Generative AI using LangChain</h1>
+            <p style="color: #666; margin: 10px 0;">by CampusX</p>
+            <span class="badge">18+ Videos</span>
+        </div>
+
+        <div class="roadmap">
+            <div class="milestone">
+                <div class="icon">📚</div>
+                <div class="content">
+                    <h2>Foundation</h2>
+                    <p>Introduction to LangChain framework, setup, and core components</p>
+                    <span class="videos">Videos 1-4</span>
+                </div>
+            </div>
+
+            <div class="milestone">
+                <div class="icon">⚙️</div>
+                <div class="content">
+                    <h2>Structured Output</h2>
+                    <p>Format and validate AI responses with structured output patterns</p>
+                    <span class="videos">Videos 5-9</span>
+                </div>
+            </div>
+
+            <div class="milestone">
+                <div class="icon">🗄️</div>
+                <div class="content">
+                    <h2>RAG Systems</h2>
+                    <p>Build chatbots with document retrieval and YouTube integration</p>
+                    <span class="videos">Videos 10-15</span>
+                </div>
+            </div>
+
+            <div class="milestone">
+                <div class="icon">🤖</div>
+                <div class="content">
+                    <h2>AI Agents</h2>
+                    <p>Create autonomous agents with tool calling and end-to-end systems</p>
+                    <span class="videos">Videos 16-18</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Build real-world AI applications from basics to advanced!</strong></p>
+            <a href="https://youtube.com/playlist?list=PLKnIA16_RmvaTbihpo4MtzVm4XOQa0ER0" class="cta-button" target="_blank">
+                Watch Playlist →
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -16,6 +16,11 @@ app.add_middleware(
 )
 
 
+from database import DATABASE_URL
+print('------------------------------------------')
+print("DATABASE_URL", DATABASE_URL)
+print('------------------------------------------')
+
 @app.get("/image")
 def get_image():
     url = "https://m.media-amazon.com/images/W/MEDIAX_1215821-T2/images/I/61vynIQfhIL._SX679_.jpg"
